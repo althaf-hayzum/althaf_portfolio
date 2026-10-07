@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@property --color-bg { syntax: '<color>'; inherits: true; initial-value: #11110f; }
+@property --color-surface { syntax: '<color>'; inherits: true; initial-value: #191915; }
+@property --color-text { syntax: '<color>'; inherits: true; initial-value: #f1eee5; }
+@property --color-text-muted { syntax: '<color>'; inherits: true; initial-value: #9a978d; }
+@property --color-border { syntax: '<color>'; inherits: true; initial-value: #2b2b25; }
+@property --color-glass { syntax: '<color>'; inherits: true; initial-value: rgba(241, 238, 229, 0.035); }
+@property --color-accent { syntax: '<color>'; inherits: true; initial-value: #849b45; }
+@property --color-border-soft { syntax: '<color>'; inherits: true; initial-value: rgba(43, 43, 37, 0.72); }
+@property --color-border-subtle { syntax: '<color>'; inherits: true; initial-value: rgba(43, 43, 37, 0.46); }
+@property --color-surface-raised { syntax: '<color>'; inherits: true; initial-value: #1d1d18; }
+@property --color-input { syntax: '<color>'; inherits: true; initial-value: #1c1c18; }
+@property --color-text-soft { syntax: '<color>'; inherits: true; initial-value: rgba(241, 238, 229, 0.68); }
+@property --color-text-faint { syntax: '<color>'; inherits: true; initial-value: rgba(154, 151, 141, 0.58); }
+@property --color-shadow { syntax: '<color>'; inherits: true; initial-value: rgba(0, 0, 0, 0.38); }
+@property --color-accent-shadow { syntax: '<color>'; inherits: true; initial-value: rgba(132, 155, 69, 0.18); }
+@property --color-nav-cta-bg { syntax: '<color>'; inherits: true; initial-value: #f1eee5; }
+@property --color-nav-cta-text { syntax: '<color>'; inherits: true; initial-value: #171713; }
+@property --color-jiba { syntax: '<color>'; inherits: true; initial-value: #cfe0fa; }
+@property --color-jiba-accent { syntax: '<color>'; inherits: true; initial-value: #aac9f1; }
+
+:root {
+  transition: --color-bg 220ms ease, --color-surface 220ms ease, --color-text 220ms ease,
+    --color-text-muted 220ms ease, --color-border 220ms ease, --color-glass 220ms ease,
+    --color-accent 220ms ease, --color-border-soft 220ms ease,
+    --color-border-subtle 220ms ease, --color-surface-raised 220ms ease,
+    --color-input 220ms ease, --color-text-soft 220ms ease, --color-text-faint 220ms ease,
+    --color-shadow 220ms ease, --color-accent-shadow 220ms ease,
+    --color-nav-cta-bg 220ms ease, --color-nav-cta-text 220ms ease,
+    --color-jiba 220ms ease, --color-jiba-accent 220ms ease;
+  color-scheme: dark;
+  --color-bg: #11110f;
+  --color-surface: #191915;
+  --color-text: #f1eee5;
+  --color-text-muted: #9a978d;
+  --color-border: #2b2b25;
+  --color-glass: rgba(241, 238, 229, 0.035);
+  --color-accent: #849b45;
+  --color-border-soft: rgba(43, 43, 37, 0.72);
+  --color-border-subtle: rgba(43, 43, 37, 0.46);
+  --color-surface-raised: #1d1d18;
+  --color-input: #1c1c18;
+  --color-text-soft: rgba(241, 238, 229, 0.68);
+  --color-text-faint: rgba(154, 151, 141, 0.58);
+  --color-shadow: rgba(0, 0, 0, 0.38);
+  --color-accent-shadow: rgba(132, 155, 69, 0.18);
+  --color-nav-cta-bg: #f1eee5;
+  --color-nav-cta-text: #171713;
+  --color-jiba: #cfe0fa;
+  --color-jiba-accent: #aac9f1;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+:root[data-theme='day'] {
+  color-scheme: light;
+  --color-bg: #f1ede3;
+  --color-surface: #e8e3d8;
+  --color-text: #171713;
+  --color-text-muted: #68665e;
+  --color-border: #d5d0c4;
+  --color-glass: rgba(23, 23, 19, 0.035);
+  --color-accent: #718b35;
+  --color-border-soft: rgba(213, 208, 196, 0.84);
+  --color-border-subtle: rgba(213, 208, 196, 0.64);
+  --color-surface-raised: #e8e3d8;
+  --color-input: #e8e3d8;
+  --color-text-soft: rgba(23, 23, 19, 0.72);
+  --color-text-faint: rgba(104, 102, 94, 0.67);
+  --color-shadow: rgba(59, 49, 29, 0.12);
+  --color-accent-shadow: rgba(113, 139, 53, 0.15);
+  --color-nav-cta-bg: #171713;
+  --color-nav-cta-text: #f1ede3;
+  --color-jiba: #42627f;
+  --color-jiba-accent: #4b7497;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.theme-monochrome-logo {
+  filter: brightness(0) invert(1);
+}
+
+:root[data-theme='day'] .theme-monochrome-logo {
+  filter: brightness(0) invert(0.12) sepia(0.1) saturate(0.4);
+}
+
+#contact input:-webkit-autofill,
+#contact input:-webkit-autofill:hover,
+#contact input:-webkit-autofill:focus,
+#contact textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-input) inset;
+  caret-color: var(--color-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    transition-duration: 0.001ms;
+  }
+  body {
+    transition-duration: 0.001ms;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  .hero-section {
+    padding-top: 4rem;
+  }
+
+  .hero-right-column {
+    gap: 0;
+    margin-top: 0.25rem;
+  }
+
+  .hero-right-column > div > p {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .hero-right-column > div > span {
+    font-size: 9px;
+    line-height: 1rem;
+  }
+
+  .hero-identity-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* --- Skills network connection lines (Skills section) --- */
+@keyframes skills-dash-flow {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.skills-line {
+  animation: skills-dash-flow 1.8s linear infinite;
+}
+
+@keyframes skills-hub-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.skills-hub {
+  animation: skills-hub-pulse 2.4s ease-in-out infinite;
+}
+
+/* Two-position Projects horizontal showcase. */
+.projects-showcase-section {
+  height: 360svh;
+  background-color: var(--color-bg);
+}
+
+.projects-showcase-track {
+  width: 200%;
+}
+
+.projects-showcase-slide {
+  width: 50%;
+}
+
+/* Short desktop browser panes can sit just below the lg breakpoint. Keep the
+   image visible and leave enough room for each showcase's supporting copy. */
+@media (min-width: 640px) and (max-width: 1023px) and (max-height: 680px) {
+  .projects-showcase-track {
+    top: 13rem;
+  }
+
+  .projects-showcase-card {
+    height: 100%;
+    max-height: 100%;
+    aspect-ratio: auto;
+    flex-direction: row;
+  }
+
+  .projects-showcase-media {
+    flex: 0 0 50%;
+    width: 50%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .projects-showcase-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .projects-showcase-copy {
+    height: 100%;
+    flex: 1 1 0%;
+    min-height: 0;
+    gap: 0.375rem;
+    padding: 1rem;
+  }
+
+  .projects-showcase-label {
+    font-size: 8px;
+  }
+
+  .projects-showcase-title {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .projects-showcase-description {
+    margin-top: 0.5rem;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .projects-showcase-category {
+    margin-top: 0.375rem;
+    font-size: 8px;
+    line-height: 1.35;
+  }
+
+  .projects-showcase-footer {
+    padding-top: 0.5rem;
+  }
+
+  .projects-showcase-footer a {
+    min-height: 2rem;
+  }
+}
+
+@media (max-width: 639px) and (max-height: 680px) {
+  .projects-showcase-card {
+    border-radius: 0.875rem;
+  }
+
+  .projects-showcase-media {
+    flex-basis: 21svh;
+    height: 21svh;
+    max-height: 21svh;
+    aspect-ratio: auto;
+  }
+
+  .projects-showcase-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .projects-showcase-copy {
+    min-height: 0;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .projects-showcase-label {
+    font-size: 8px;
+  }
+
+  .projects-showcase-title {
+    font-size: 1.375rem;
+  }
+
+  .projects-showcase-description {
+    margin-top: 0.5rem;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .projects-showcase-category {
+    margin-top: 0.375rem;
+    font-size: 8px;
+    line-height: 1.35;
+  }
+
+  .projects-showcase-footer {
+    padding-top: 0.5rem;
+  }
+
+  .projects-showcase-footer a {
+    min-height: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-showcase-section {
+    height: auto;
+  }
+
+  .projects-showcase-track {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    transform: none;
+  }
+
+  .projects-showcase-slide {
+    width: 100%;
+    height: auto;
+    min-height: 60svh;
+  }
+}
