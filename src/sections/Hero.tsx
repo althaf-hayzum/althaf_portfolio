@@ -93,7 +93,8 @@ export function Hero() {
         ref={introRef}
         className="absolute inset-0 z-40 flex items-center justify-center bg-[var(--color-bg)]"
       >
-        <h1
+        <p
+          aria-hidden="true"
           className="flex flex-col items-center text-[13vw] font-semibold leading-[0.95] tracking-tight md:text-[7vw]"
           style={{ fontFamily: 'var(--font-display)' }}
         >
@@ -103,7 +104,7 @@ export function Hero() {
           <span ref={lastNameRef} className="inline-block opacity-0">
             {site.lastName}
           </span>
-        </h1>
+        </p>
       </div>
 
       {/* Main hero content, revealed after the intro */}
