@@ -1,8 +1,8 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import alBeefyShowcaseImage from '../assets/images/al-beefy-showcase.png';
-import hayzumiShowcaseImage from '../assets/images/hayzumi-council.png';
+import alBeefyShowcaseImage from '../assets/images/al-beefy-showcase.webp';
+import hayzumiShowcaseImage from '../assets/images/hayzumi-council.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,6 +166,11 @@ export function Projects() {
                     <img
                       src={alBeefyShowcaseImage}
                       alt="AL BEEFY mobile point-of-sale showcase with dashboard, billing, checkout, product management, reports, and thermal receipt printing screens"
+                      width={1672}
+                      height={941}
+                      loading="eager"
+                      fetchPriority="low"
+                      decoding="async"
                       className="block aspect-[16/9] w-full bg-[#160d0d] object-contain lg:aspect-auto lg:h-full"
                     />
                   </div>
@@ -202,6 +207,11 @@ export function Projects() {
                     <img
                       src={hayzumiShowcaseImage}
                       alt="HAYZUMI AI Council project interface showing a Council Decision, confidence and consensus analysis, provider perspectives, and executive briefing"
+                      width={1672}
+                      height={941}
+                      loading="eager"
+                      fetchPriority="low"
+                      decoding="async"
                       className="block h-full w-full object-contain"
                     />
                   </div>
