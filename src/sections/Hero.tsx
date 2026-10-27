@@ -16,7 +16,7 @@ export function Hero() {
   const firstNameRef = useRef<HTMLSpanElement>(null);
   const lastNameRef = useRef<HTMLSpanElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
-  const jibaIntroRef = useRef<HTMLDivElement>(null);
+  const fridayIntroRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const reduceMotion = window.matchMedia(
@@ -26,7 +26,7 @@ export function Hero() {
     if (reduceMotion) {
       gsap.set(introRef.current, { display: 'none' });
       gsap.set(mainRef.current, { opacity: 1 });
-      gsap.set(jibaIntroRef.current, {
+      gsap.set(fridayIntroRef.current, {
         autoAlpha: 0,
       });
       return;
@@ -60,7 +60,7 @@ export function Hero() {
         '<',
       )
       .fromTo(
-        jibaIntroRef.current,
+        fridayIntroRef.current,
         { autoAlpha: 0, y: 8, scale: 0.98, transformOrigin: 'center center' },
         {
           autoAlpha: 1,
@@ -72,7 +72,7 @@ export function Hero() {
         3.2,
       )
       .to(
-        jibaIntroRef.current,
+        fridayIntroRef.current,
         { autoAlpha: 0, duration: 0.55, ease: 'power1.inOut' },
         8.95,
       )
@@ -137,27 +137,27 @@ export function Hero() {
 
         <div className="hero-right-column relative z-40 order-2 ml-auto mt-4 flex w-full max-w-[82%] min-w-0 flex-col gap-4 text-right sm:max-w-[78%] md:order-3 md:ml-0 md:mt-0 md:min-h-[60vh] md:max-w-none md:justify-center md:gap-4 md:text-center lg:gap-6">
           <div
-            ref={jibaIntroRef}
+            ref={fridayIntroRef}
             className="text-left drop-shadow-[0_0_12px_rgba(103,163,255,0.58)] md:absolute md:left-6 md:-top-14 md:z-50 md:w-36 md:text-left"
           >
-            <p className="relative mb-1 rotate-[-8deg] text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-jiba)] sm:text-sm md:text-[clamp(1.3rem,2.7vw,2.75rem)]">
-              JIBA <span className="text-[var(--color-jiba-accent)]">↗</span>
-              <span aria-hidden="true" className="absolute -left-6 top-[58%] text-xs text-[var(--color-jiba-accent)]/90 md:-left-8 md:text-base">
+            <p className="relative mb-1 rotate-[-8deg] text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-friday)] sm:text-sm md:text-[clamp(1.3rem,2.7vw,2.75rem)]">
+              FRIDAY <span className="text-[var(--color-friday-accent)]">↗</span>
+              <span aria-hidden="true" className="absolute -left-6 top-[58%] text-xs text-[var(--color-friday-accent)]/90 md:-left-8 md:text-base">
                 ✧
               </span>
-              <span aria-hidden="true" className="absolute -right-2 -top-3 text-[10px] text-[var(--color-jiba)] md:-right-3 md:-top-5 md:text-lg">
+              <span aria-hidden="true" className="absolute -right-2 -top-3 text-[10px] text-[var(--color-friday)] md:-right-3 md:-top-5 md:text-lg">
                 ✦
               </span>
-              <span aria-hidden="true" className="absolute -left-2 -top-4 text-[6px] text-[var(--color-jiba-accent)]/55">
+              <span aria-hidden="true" className="absolute -left-2 -top-4 text-[6px] text-[var(--color-friday-accent)]/55">
                 ✧
               </span>
-              <span aria-hidden="true" className="absolute left-[38%] -top-3 text-[7px] text-[var(--color-jiba-accent)]/40">
+              <span aria-hidden="true" className="absolute left-[38%] -top-3 text-[7px] text-[var(--color-friday-accent)]/40">
                 ⋆
               </span>
-              <span aria-hidden="true" className="absolute right-[16%] -bottom-2 text-[8px] text-[var(--color-jiba)]/60">
+              <span aria-hidden="true" className="absolute right-[16%] -bottom-2 text-[8px] text-[var(--color-friday)]/60">
                 ✦
               </span>
-              <span aria-hidden="true" className="absolute -right-4 top-[68%] text-[5px] text-[var(--color-jiba-accent)]/45">
+              <span aria-hidden="true" className="absolute -right-4 top-[68%] text-[5px] text-[var(--color-friday-accent)]/45">
                 ·
               </span>
             </p>

@@ -18,8 +18,8 @@
 @property --color-accent-shadow { syntax: '<color>'; inherits: true; initial-value: rgba(132, 155, 69, 0.18); }
 @property --color-nav-cta-bg { syntax: '<color>'; inherits: true; initial-value: #f1eee5; }
 @property --color-nav-cta-text { syntax: '<color>'; inherits: true; initial-value: #171713; }
-@property --color-jiba { syntax: '<color>'; inherits: true; initial-value: #cfe0fa; }
-@property --color-jiba-accent { syntax: '<color>'; inherits: true; initial-value: #aac9f1; }
+@property --color-friday { syntax: '<color>'; inherits: true; initial-value: #cfe0fa; }
+@property --color-friday-accent { syntax: '<color>'; inherits: true; initial-value: #aac9f1; }
 
 :root {
   transition: --color-bg 220ms ease, --color-surface 220ms ease, --color-text 220ms ease,
@@ -29,7 +29,7 @@
     --color-input 220ms ease, --color-text-soft 220ms ease, --color-text-faint 220ms ease,
     --color-shadow 220ms ease, --color-accent-shadow 220ms ease,
     --color-nav-cta-bg 220ms ease, --color-nav-cta-text 220ms ease,
-    --color-jiba 220ms ease, --color-jiba-accent 220ms ease;
+    --color-friday 220ms ease, --color-friday-accent 220ms ease;
   color-scheme: dark;
   --color-bg: #11110f;
   --color-surface: #191915;
@@ -48,8 +48,8 @@
   --color-accent-shadow: rgba(132, 155, 69, 0.18);
   --color-nav-cta-bg: #f1eee5;
   --color-nav-cta-text: #171713;
-  --color-jiba: #cfe0fa;
-  --color-jiba-accent: #aac9f1;
+  --color-friday: #cfe0fa;
+  --color-friday-accent: #aac9f1;
 
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -74,8 +74,8 @@
   --color-accent-shadow: rgba(113, 139, 53, 0.15);
   --color-nav-cta-bg: #171713;
   --color-nav-cta-text: #f1ede3;
-  --color-jiba: #42627f;
-  --color-jiba-accent: #4b7497;
+  --color-friday: #42627f;
+  --color-friday-accent: #4b7497;
 }
 
 * {
